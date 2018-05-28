@@ -1,0 +1,41 @@
+<% include partials/header %>
+<div class="container">
+	<div class="jumbotron">
+		<h1 class="display-4">Your Weather at (<%= lat %>, <%= long %>) DD:</h1>
+		<p class="lead">Simple and Concise, here are the current conditions.</p>
+	</div><!-- Close jumbotron -->
+	<hr class="my-4">
+	<div class="row">
+		<div class="col-md-12">
+			<h4>Located in timezone: <em><%= weather["timezone"] %></em></h4>
+			<p>Overall Conditions: <em><%= weather["currently"]["summary"] %></em></p>
+			<p>Current Temperature: <em><%= weather["currently"]["temperature"] %> Degrees Fahrenheit</em></p>
+			<p>Temperature feels like: <em><%= weather["currently"]["apparentTemperature"] %> Degrees Fahrenheit</em></p>
+			<p>Dewpoint: <em><%= weather["currently"]["dewPoint"] %> Degrees Fahrenheit</em></p>
+			<p>Relative Humidity: <em><%= weather["currently"]["humidity"]*100 %>%</em></p>
+			<p>Wind speed: <em><%= weather["currently"]["windSpeed"] %> mph</em></p>
+			<p>Bearing: <em><%= weather["currently"]["windBearing"] %></em></p>
+			<p>Wind gusts: <em><%= weather["currently"]["windGust"] %> mph</em></p>
+			<p>Sky Occluded by Clouds: <em><%= weather["currently"]["cloudCover"]*100 %>%</em></p>
+			<p>UV index: <em><%= weather["currently"]["uvIndex"] %></em></p>
+			<p>Current Visibility: <em><%= weather["currently"]["visibility"] %> miles</em></p>
+			<p>Ozone: <em><%= weather["currently"]["ozone"] %> <a href="https://en.wikipedia.org/wiki/Dobson_unit">DU</a></em></p>
+			<p>Distance to nearest storm: <em><%= weather["currently"]["nearestStormDistance"] %> miles</em></p>
+			<p>Bearing: <em><%= weather["currently"]["nearestStormBearing"] %></em></p>
+		</div><!--Close col-med-12-->
+	</div><!--Close row-->
+	<div class="row">
+		<div class="col-md-12">
+			<p>Weather by the hour:</p>
+			<p><span><em><%= weather["hourly"]["summary"] %></em></span></p>
+			<hr class="my-4">
+			<p>
+				<a href="/"><i class="cloud icon"></i>Search Again</a>
+			</p>
+		</div><!--Close col-med-12-->
+	</div><!--Close row-->
+
+    
+<!-- container closing div tag in footer.ejs-->
+
+<% include partials/footer %>
