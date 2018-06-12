@@ -1,5 +1,45 @@
-body{
+html{
+    color: #555555
+}
+
+.form {
+    width: 45%; 
+    margin: 30px auto;
+    z-index: 1;
+}
+
+.footer {
+    justify-content: space-between;
+    padding-top: 10px;
+    flex-basis: 20%;
+}
+@media all and (max-width: 800px) {
+    .footer {
+        flex-direction: column;
+        flex-grow: 1;
+        align-items: center;
+        background-color: #1c293d;
+    }
+}
+.body {
+    margin: 0;
     background: url(weather.jpg);
+    background-color: #1c293d;
     opacity: 0.95;
-    background-repeat: no-repeat; 
+    background-position: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    color: #aacbff;
+    background-repeat: no-repeat;
+}
+
+.jumbotron {
+    color: #000;
+}
+
+#forecast {
+    padding-top: 14px;
 }
